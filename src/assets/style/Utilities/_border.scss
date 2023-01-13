@@ -1,0 +1,37 @@
+@import "../variables/variables";
+
+.no-border {
+    border: 0
+}
+
+.s-border {
+    border-style: solid;
+    border-width: $border-w;
+    border-color: $greyNatural;
+}
+
+.s-border-t {
+    border-top-style: solid;
+    border-top-width: $border-w;
+    border-color: $greyNatural;
+}
+
+.s-border-s {
+    border-inline-start-style: solid;
+    border-inline-start-style: $border-w;
+    border-color: $greyNatural;
+
+}
+
+.s-border-b {
+    border-bottom-style: solid;
+    border-bottom-width: $border-w;
+    border-color: $greyNatural;
+}
+
+.s-border-e {
+    border-inline-end-style: solid;
+    border-inline-end-style: $border-w;
+    border-color: $greyNatural;
+
+}

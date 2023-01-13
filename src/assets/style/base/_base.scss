@@ -1,0 +1,76 @@
+@import "../variables/variables";
+
+[dir="rtl"] {
+    html,
+    body {
+      direction: rtl;
+      text-align: right;
+    }
+  }
+  [dir="ltr"] {
+    html,
+    body {
+      direction: ltr;
+      text-align: left;
+    }
+  }
+  
+  body,
+  html {
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden !important;
+    font-size: #{$font-page}px;
+  }
+  
+  * {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  *,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+input,
+textarea {
+    border: none;
+    outline: none;
+    overflow: auto;
+}

@@ -1,0 +1,46 @@
+@import "../variables/variables";
+
+
+@each $var in $paddings {
+    .p-#{$var} {
+        padding: #{$var/$font-page}rem;
+    }
+}
+
+@each $var in $paddings {
+    .ps-#{$var} {
+        padding-inline-start: #{$var/$font-page}rem;
+    }
+}
+
+@each $var in $paddings {
+    .pe-#{$var} {
+        padding-inline-end: #{$var/$font-page}rem;
+    }
+}
+
+@each $var in $paddings {
+    .pt-#{$var} {
+        padding-top: #{$var/$font-page}rem;
+    }
+}
+
+@each $var in $paddings {
+    .pb-#{$var} {
+        padding-bottom: #{$var/$font-page}rem;
+    }
+}
+
+@each $var in $paddings {
+    .py-#{$var} {
+        padding-top: #{$var/$font-page}rem;
+        padding-bottom: #{$var/$font-page}rem;
+    }
+}
+
+@each $var in $paddings {
+    .rem-#{$var} {
+        padding-inline-end: #{$var/$font-page}rem;
+        padding-inline-start: #{$var/$font-page}rem;
+    }
+}

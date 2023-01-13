@@ -1,0 +1,306 @@
+@import "../variables/variables";
+
+@mixin truncate() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin scroll-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin scroll-y {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+
+    ::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $background-color;
+    }
+
+    body {
+        // IE
+        scrollbar-face-color: $foreground-color;
+        scrollbar-track-color: $background-color;
+    }
+}
+
+
+
+@mixin inline-list {
+    list-style: none;
+
+    li {
+        display: inline-block;
+    }
+}
+
+
+@mixin clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+      display: table;
+      content: "";
+      line-height: 0;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+  
+@mixin center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  @mixin center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  @mixin center-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @mixin hidden {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+  }
+
+
+  @mixin font-size($size: $font-page ){
+    font-size: ( $size / $font-page ) + rem;
+  }
+  @mixin font-spacing($size: 1 ){
+    letter-spacing: ( $size / $font-page ) + rem;
+  }
+
+  @mixin x-appearance ($value) {
+	-webkit-appearance: $value;
+	   -moz-appearance: $value;
+       -o-appearance: $value;
+       -ms-appearance: $value;
+	        appearance: $value;
+}
+
+@mixin x-calc ($property, $expression) {
+	#{$property}: -webkit-calc(#{$expression});
+	#{$property}: calc(#{$expression});
+}
+
+
+
+@mixin user-select ($value: none) {
+	-webkit-user-select: $value;
+	   -moz-user-select: $value;
+	    -ms-user-select: $value;
+	        user-select: $value;
+}
+
+@mixin max-size($width: auto, $height: $width) {
+    max-height: $height;
+    max-width: $width;
+}
+@mixin max-width($width: auto) {
+    max-width: $width;
+}
+@mixin max-height($height: auto) {
+    max-height: $height;
+}
+
+@mixin margin-between-h($margin) {
+    &:not(:first-child):not(:last-child) {
+        margin-inline-start: $margin;
+        margin-inline-end: $margin;
+    }
+
+    &:first-child:not(:last-child) {
+        margin-inline-start: $margin;
+    }
+
+    &:last-child:not(:first-child) {
+        margin-inline-end: $margin;
+    }
+}
+
+@mixin gradient($start-color, $end-color, $orientation) {
+    background: $start-color;
+    @if $orientation == 'vertical' {
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'horizontal' {
+      background: -webkit-linear-gradient(left, $start-color, $end-color);
+      background: linear-gradient(to right, $start-color, $end-color);
+    } @else {
+      background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+      background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+  }
+ @mixin gradient-none() {
+    background: none !important;
+ }
+
+ @mixin position-element($position: relative,$top:0,$bottom:0,$start:0,$end:0) {
+    position:$position;
+    top:$top;
+    bottom:$bottom;
+    inset-inline-start: $start;
+    inset-inline-end: $end;
+
+}
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+    @font-face {
+      font-family: quote($font-name);
+      src: url($file-name + '.eot');
+      src: url($file-name + '.eot?#iefix')  format('embedded-opentype'),
+      url($file-name + '.woff') format('woff'),
+      url($file-name + '.ttf')  format('truetype'),
+      url($file-name + '.svg##{$font-name}')  format('svg');
+      font-weight: $weight;
+      font-style: $style;
+    }
+  }
+  @mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @mixin center-vertically {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
+  }
+  @mixin prefix($property, $value, $vendors: webkit moz ms o, $default: true) {
+    @if $vendors {
+      @each $vendor in $vendors {
+        #{"-" + $vendor + "-" + $property}: #{$value};
+      }
+    }
+    @if $default {
+      #{$property}: #{$value};
+    }
+  }
+  @mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @mixin css3-prefix($prop, $value) {
+    -webkit-#{$prop}: #{$value};
+    -moz-#{$prop}: #{$value};
+    -ms-#{$prop}: #{$value};
+    -o-#{$prop}: #{$value};
+    #{$prop}: #{$value};
+ }
+ @mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+    @keyframes #{$name} {
+      @content;
+    }
+ }
+ @mixin text-shorten {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+ }
+ @mixin margin-x-auto {
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+}
+@mixin margin-y-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+@mixin content-pseudo( $pos: absolute, $content: ''){
+    content: $content;
+    position: $pos;
+}
+
+@mixin cover-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Box Sizing
+-------------------------*/
+
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; // Safari <= 5
+       -moz-box-sizing: $box-model; // Firefox <= 19
+            box-sizing: $box-model;
+  }
+
+  @mixin cursorPointer {
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+// No focus mixin
+// Remove focus from a button or input field while in focused state
+@mixin noFocus {
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+/*
+ -webkit-#{name}: $transition;
+    -moz-#{name}: $transition;
+    -o-#{name}: $transition;
+    -ms-#{name}: $transition;
+*/
+
+
+
+@mixin insetBoxShadow($x, $y, $blur, $color) {
+    -webkit-box-shadow: inset $x $y $blur $color;
+    -moz-box-shadow: inset $x $y $blur $color;
+    -o-box-shadow: inset $x $y $blur $color;
+    -ms-box-shadow: inset $x $y $blur $color;
+    box-shadow: inset $x $y $blur $color;
+}
+@mixin textSelection {
+	&::selection {
+		@content;
+	}
+	&::-moz-selection {
+		@content;
+	}
+}

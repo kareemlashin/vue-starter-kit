@@ -1,0 +1,7 @@
+@import "../variables/variables";
+
+@each $var in $fontSizes {
+  .fs-#{$var} {
+    font-size: #{$var/$font-page}rem;
+  }
+}

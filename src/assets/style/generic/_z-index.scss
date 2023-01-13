@@ -1,0 +1,7 @@
+@import "../variables/variables";
+
+@each $var in $index {
+    .index-#{$var}{
+        z-index: $var !important;
+    }
+}

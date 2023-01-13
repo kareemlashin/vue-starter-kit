@@ -1,0 +1,106 @@
+
+$mobile-small: 		525px 	!default;
+$mobile-medium: 	650px 	!default;
+$tablet-portrait: 	768px 	!default;
+$tablet-landscape: 	1024px 	!default;
+$desktop: 			1200px 	!default;
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+}
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+
+@mixin responsive( $breakpoint ) {
+    /*
+        breakpoints are viewport arbitrary values,
+        they are defined with the aim of allowing the SCSS/CSS code of your app' behave accordingly to your user's device width,
+        the breakpoints I used were inspired by Bootstrap =>
+        https://getbootstrap.com/docs/5.0/layout/breakpoints/
+    */
+    @if $breakpoint == smartphone-portrait {
+        @media only screen and ( max-width: 575.98px ) {
+            @content;
+        }
+    }
+    @if $breakpoint == smartphone-landscape {
+        @media only screen and ( min-width: 575.99px ) and ( max-width: 767.98px ) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet {
+        @media only screen and ( min-width: 767.99px ) and ( max-width: 1199.97px ) {
+            @content;
+        }
+    }
+    @if $breakpoint == laptop {
+        @media only screen and ( min-width: 1199.98px  ) and ( max-width: 1399.98px ) {
+            @content;
+        }
+    }
+    @if $breakpoint == desktop {
+        @media only screen and ( min-width: 1399.99px ) {
+            @content;
+        }
+    }
+}
+
+
+/*==========  Non-Mobile First Method  ==========*/
+ 
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+ 
+}
+ 
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+ 
+}
+ 
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+ 
+}
+ 
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+ 
+}
+ 
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+    
+}
+
+/* Breakpoints
+-------------------------*/
+
+@mixin breakpoint($point) {
+    @if $point == xl {
+      @media (max-width: 75em) { @content; }
+    }
+    @else if $point == minxl {
+      @media (min-width: 75em) { @content; }
+    }  
+    @else if $point == lg {
+      @media (max-width: 62em) { @content; }
+    }
+    @else if $point == md {
+      @media (max-width: 48em)  { @content; }
+    }
+    @else if $point == sm {
+      @media (max-width: 34em)  { @content; }
+    }  
+    @else if $point == mobile {
+      @media (max-width: 25em)  { @content; }
+    }  
+    @else if $point == mobilexs {
+      @media (max-width: 21.875em)  { @content; }
+    }      
+  }
+  

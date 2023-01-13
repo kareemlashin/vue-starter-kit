@@ -1,0 +1,18 @@
+.parent{
+    display: flex;
+    .chalid{
+        background-color: red;
+    }
+}
+// inline-flex vs flex
+// flex direction (row - column -  row/column-reverse)
+// flex wrap 
+// flex flow (row wrap)
+// justify-content () [parent to child]
+// align-content (must be wrap)  [parent to child]
+// flex-grow 
+// flex-shrink
+// flex-basis
+// flex
+// order
+// align-self 

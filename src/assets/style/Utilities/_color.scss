@@ -1,0 +1,13 @@
+@import "../variables/variables";
+
+.color-greyNatural {
+  color: $greyNatural;
+}
+
+.bg-greyNatural {
+  background-color: $greyNatural;
+}
+
+.gradient-greyNatural {
+  background: linear-gradient(90deg, $greyNatural 0%, $greyNatural 100%);
+}

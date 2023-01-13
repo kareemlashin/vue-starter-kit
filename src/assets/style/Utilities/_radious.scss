@@ -1,0 +1,52 @@
+
+@import "../variables/variables";
+
+@each $var in $border-radius {
+    .br-#{$var} {
+        border-radius: #{$var/$font-page}rem !important;
+        -webkit-border-radius: #{$var/$font-page}rem !important;
+        -moz-border-radius: #{$var/$font-page}rem !important;
+        -ms-border-radius: #{$var/$font-page}rem !important;
+        -o-border-radius: #{$var/$font-page}rem !important;
+    }
+}
+
+@each $var in $border-radius {
+    .br-ee-#{$var} {
+        border-end-end-radius: #{$var/$font-page}rem !important;
+    }
+}
+
+@each $var in $border-radius {
+    .br-ss-#{$var} {
+        border-start-start-radius: #{$var/$font-page}rem !important;
+    }
+}
+
+@each $var in $border-radius {
+    .br-se-#{$var} {
+        border-start-end-radius: #{$var/$font-page}rem !important;
+    }
+}
+
+@each $var in $border-radius {
+    .br-es-#{$var} {
+        border-end-start-radius: #{$var/$font-page}rem !important;
+    }
+}
+
+.br-rounded {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.br-full {
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}

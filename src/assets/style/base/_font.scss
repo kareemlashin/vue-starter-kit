@@ -1,0 +1,32 @@
+@font-face {
+    font-family: ft_Bold;
+    src: url("");
+  }
+  
+  @font-face {
+    font-family: ft_Lt;
+    src: url("");
+  }
+  
+  @font-face {
+    font-family: ft_Md;
+    src: url("");
+  }
+  
+  @font-face {
+    font-family: ft_Rg;
+    src: url("");
+  }
+  .f-Bold{
+    font-family: ft_Bold;
+  }
+  .f-Md{
+    font-family: ft_Md;
+  }
+  .f-Lt{
+    font-family: ft_Lt;
+  }
+  .f-Rg{
+    font-family: ft_Rg;
+  }
+  

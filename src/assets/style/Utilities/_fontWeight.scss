@@ -1,0 +1,7 @@
+@import "../variables/variables";
+
+@each $var in $fontWeights {
+  .fw-#{$var} {
+    font-weight: #{$var};
+  }
+}
